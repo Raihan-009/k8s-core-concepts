@@ -9,3 +9,7 @@ spec:
   containers:
     - name: redis-container
       image: redis
+
+
+# CMD --> kubectl create -f redis-pod.yaml
+# CMD -->  kubectl get pods
