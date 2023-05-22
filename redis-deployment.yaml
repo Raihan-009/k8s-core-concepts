@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-app
+  labels:
+    app: redis-app
+    type: chache
+spec:
+  selector:
+    matchLabels:
+      type: chache-memory #from pod definition file, underlying labels
+  template:
+    metadata:
+      name: redis-pod
+      labels:
+        app: in-memory
+        type: chache-memory
+    spec:
+      containers:
+        - name: redis-container
+          image: redis
+  replicas: 4
