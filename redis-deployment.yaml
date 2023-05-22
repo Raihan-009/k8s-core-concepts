@@ -1,10 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-app
+  name: redis-app-deployment
   labels:
     app: redis-app
     type: chache
+  namespace: dev #deploying at specified namespace
 spec:
   selector:
     matchLabels:
